@@ -250,8 +250,6 @@ Mechanical constraints:
 - keep-out for mounting holes
 - silkscreen labels for each pin group
 
-Documentation requirement:
-- include a pinout table in the documentation deliverables
 
 ---
 
@@ -357,7 +355,6 @@ For each custom/added footprint you must document:
   - USB-UART + connectors
   - Expansion headers
 - PCB layout
-- libraries used (integrated library preferred)
 
 ### 6.2 Manufacturing outputs
 - gerbers
@@ -373,15 +370,6 @@ For each custom/added footprint you must document:
 - pick-and-place / centroid
 - assembly drawing PDF (recommended)
 
-### 6.4 Documentation
-Provide a short report (markdown or PDF) that includes:
-- system overview
-- power tree diagram
-- CAN interface details + termination strategy
-- external flash wiring notes
-- expansion header pinout
-- bring-up checklist (power-on, SWD verify, UART verify, CAN loopback)
-
 ---
 
 ## 7. Testing & review
@@ -396,7 +384,7 @@ Before marking complete:
 - termination select jumper clearly labelled
 - boot config documented (BOOT0 defaults)
 
-### 7.2 “Student misuse” scenario (must address in documentation)
+### 7.2 “Student misuse” scenario
 At minimum state what happens for:
 - USB plugged in + battery connected at same time
 - battery reverse polarity
@@ -404,35 +392,3 @@ At minimum state what happens for:
 - CANH/CANL shorted together
 - ESD strike on USB connector
 - ESD strike on CAN connector
-
----
-
-## 8. Marking rubric (suggested)
-
-| Area | Weight |
-|---|---:|
-| Schematic correctness & clarity | 25% |
-| Power design correctness | 20% |
-| CAN + Flash interface correctness | 20% |
-| PCB layout quality | 20% |
-| Deliverables quality (BOM/PNP/Gerbers/docs) | 15% |
-
----
-
-## 9. Stretch goals (optional)
-If you finish early, implement one or more:
-- USB-C PD sink (5 V only) for “proper USB-C”
-- CAN isolation (isolated transceiver or digital isolator + isolated DC/DC)
-- microSD card (SPI) for logging (in addition to QSPI flash)
-- onboard current sensing (INA219/INA228 style) for power monitoring
-- onboard buck for 3V3 instead of LDO (higher efficiency)
-- onboard RTC backup supply (coin cell holder + diode OR)
-
----
-
-## 10. Final note
-This practice board should be treated like a real product:
-- keep the schematic readable and hierarchical
-- make connectors obvious and labelled
-- assume someone else will wire it without asking you questions
-- produce clean fabrication and assembly outputs
