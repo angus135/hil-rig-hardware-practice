@@ -1,9 +1,9 @@
-# Practice Project (Altium Designer): STM32F446ZET “Enhanced Nucleo” Development Board
+# Practice Project (Altium Designer): STM32F446ZET6U “Enhanced Nucleo” Development Board
 
 ## 1. Project overview
 
 ### Goal
-Design a **realistic, medium-complexity STM32 development board** in **Altium Designer**, based around the **STM32F446ZET** (LQFP144), intended for student use.
+Design a **realistic, medium-complexity STM32 development board** in **Altium Designer**, based around the **STM32F446ZET6U** (LQFP144), intended for student use.
 
 This project is intentionally **more involved than a standard Nucleo board**, but still realistic and buildable:
 - includes external memory,
@@ -52,9 +52,10 @@ It should explicitly be designed to survive student lab conditions:
 
 ## 3. Functional requirements
 
-### 3.1 Core MCU subsystem (STM32F446ZET)
+### 3.1 Core MCU subsystem (STM32F446ZET6U)
 The board must use:
-- **MCU:** STM32F446ZET (LQFP144)
+- **MCU:** STM32F446ZET6U (LQFP144)
+- **NOTE:** You must have an associated .ioc file corresponding to your MCU design as you will need to match the pins to potential outputs.
 
 Minimum MCU support circuitry:
 - **VDD decoupling** per datasheet (multiple caps distributed across supply pins)
