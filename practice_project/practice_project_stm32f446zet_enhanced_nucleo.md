@@ -104,19 +104,7 @@ The board must include:
 - **USB Micro-B or USB-C connector** (USB-C preferred for modernity)
 - USB used for:
   - providing 5 V power
-  - optionally a USB-to-UART bridge for serial debug
-
-#### USB-to-UART requirements (recommended)
-Include a USB-UART IC such as:
-- CP2102N, CH340C, FT232, etc.
-
-Must provide:
-- 3-pin or 4-pin UART header: `TX`, `RX`, `GND`, optional `3V3`
-- connect UART to an STM32 USART (document which)
-
-Add:
-- RX/TX activity LEDs (optional but encouraged)
-- ESD protection on USB data lines (recommended)
+  - USB connection to the microcontroller
 
 ---
 
@@ -127,7 +115,7 @@ The board must be powerable from:
 
 #### Battery input requirements
 Battery input range:
-- **6 V to 16 V** input range
+- **16 V to 30 V** input range
 - connector options:
   - 2-pin screw terminal
   - XT30 footprint (stretch goal)
@@ -213,19 +201,14 @@ Indicators:
 ### 3.7 External flash memory (mandatory, 4 MB)
 The board must include:
 - **4 MB external flash memory**
-- preferred interface: **QSPI**
-- acceptable interface: SPI (only if QSPI deemed too complex)
+- interface: SPI
 
 Requirements:
-- 4 MB (32 Mbit) minimum capacity, QSPI recommended
+- 4 MB (32 Mbit) minimum capacity
 - include proper decoupling
 - include pull-ups/pull-downs as required by memory datasheet
-- include series resistors (0–33 Ω footprints) for QSPI lines (recommended)
 
-Nets must be clearly named (example):
-- `QSPI_CLK`
-- `QSPI_NCS`
-- `QSPI_IO0..IO3`
+Nets must be clearly named.
 
 Layout requirements for QSPI:
 - keep traces short and matched “reasonably”
@@ -281,7 +264,7 @@ Board must include:
   - NRST
   - UART TX/RX
   - CAN TX/RX (logic side)
-  - QSPI CLK and NCS (or equivalent)
+  - SPI CLK and CS (or equivalent)
 
 ---
 
